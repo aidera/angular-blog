@@ -3,11 +3,12 @@ import {HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse}
 import {Observable, throwError} from 'rxjs';
 import {AuthService} from '../../admin/shared/services/auth.service';
 import {Router} from '@angular/router';
-import {catchError} from 'rxjs/operators';
+import {catchError, tap} from 'rxjs/operators';
 
-// Интерсепторы служат для перехвата запросов на сервер
+// Интерсепторы служат для перехвата запросов на сервер.
+// Подключаеются в корневом модуле, с определенными настройками (поэтому provideIn: root не сработает)
 // Данный интерсептор проверяет, есть ли авторизация у пользователя.
-// Если есть авторизация, то интерсептор "клонирует" запрос, передавая ему заголовок авторизации
+// Если есть авторизация, то интерсептор "клонирует" запрос, передавая ему заголовок авторизации (в данном случае query, а не header)
 // Если авторизации нет, то интерсептор перекидывает пользователя на страницу авторизации
 
 @Injectable()
@@ -34,7 +35,7 @@ export class AuthInterceptor implements HttpInterceptor {
               queryParams: {
                 authFailed: true
               }
-            })
+            });
           }
           return throwError(error);
         })

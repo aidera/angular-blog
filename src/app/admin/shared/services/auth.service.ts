@@ -6,7 +6,9 @@ import {environment} from '../../../../environments/environment';
 import {catchError, tap} from 'rxjs/operators';
 import {FirebaseAuthResponse} from '../../../shared/models/Auth';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
 
   public isFetching = false;
