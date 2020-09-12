@@ -9,6 +9,9 @@ import {MatListModule} from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 const modules: any[] = [
   MatButtonModule,
@@ -20,7 +23,10 @@ const modules: any[] = [
   MatListModule,
   MatFormFieldModule,
   MatInputModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatTableModule,
+  MatSortModule,
+  MatProgressBarModule
 ];
 
 @NgModule({

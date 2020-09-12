@@ -10,7 +10,6 @@ import {EditPageComponent} from './pages/edit-page/edit-page.component';
 import {HeaderComponent} from './shared/components/header/header.component';
 import {FooterComponent} from './shared/components/footer/footer.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
-import {AuthService} from './shared/services/auth.service';
 import {AuthTrueGuard} from './shared/services/auth-true.guard';
 import {AuthFalseGuard} from './shared/services/auth-false.guard';
 
@@ -31,7 +30,7 @@ import {AuthFalseGuard} from './shared/services/auth-false.guard';
     SharedModule,
     AdminRoutingModule,
   ],
-  providers: [AuthService, AuthTrueGuard, AuthFalseGuard]
+  providers: [AuthTrueGuard, AuthFalseGuard]
 })
 export class AdminModule {
 

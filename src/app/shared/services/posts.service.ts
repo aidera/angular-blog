@@ -22,4 +22,17 @@ export class PostsService {
         } as Post;
       }));
   }
+
+  getAll(): Observable<Post[]> {
+    return this.http.get(`${environment.dbUrl}/posts.json`)
+      .pipe(map((response: {[key: string]: any}) => {
+        return Object
+          .keys(response)
+          .map(key => ({
+            ...response[key],
+            id: key,
+            date: new Date(response[key].date)
+          }));
+      }));
+  }
 }

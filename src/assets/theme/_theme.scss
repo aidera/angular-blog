@@ -7,6 +7,7 @@
 @import "buttons-theme";
 @import "drawer-theme";
 @import "list-theme";
+@import "progressbar-theme";
 
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -80,4 +81,5 @@ a, a:visited, a:active {
 @include buttons-theme($app-theme);
 @include drawer-theme($app-theme);
 @include list-theme($app-theme);
+@include progressbar-theme($app-theme);
 
