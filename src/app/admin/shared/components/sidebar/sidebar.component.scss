@@ -1,0 +1,13 @@
+@import "../../../../../assets/theme/variables";
+
+.sidebar {
+  border-right: 1px solid $divider-color;
+  width: 230px;
+  height: 100%;
+  .mat-list-item {
+    &.active{
+      background-color: $color-primary;
+      color: $color-accent;
+    }
+  }
+}

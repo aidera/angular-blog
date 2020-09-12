@@ -1,0 +1,13 @@
+@import "variables";
+
+@mixin buttons-theme($theme) {
+
+  $config: mat-get-color-config($theme);
+
+  $primary: map-get($config, primary);
+  $accent: map-get($config, accent);
+
+  .mat-raised-button.mat-button-base{
+    border-radius: 0;
+  }
+}

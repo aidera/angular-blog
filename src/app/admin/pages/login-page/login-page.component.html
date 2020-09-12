@@ -1,0 +1,25 @@
+<form class="form" [formGroup]="form" (ngSubmit)="submit()">
+
+  <h1>Login to admin panel</h1>
+
+  <div class="alert" *ngIf="message">
+    {{ message }}
+  </div>
+
+  <app-text-input
+    fieldId="userEmail" [control]="form.get('userEmail')" [icon]="icons.user" fieldType="email" label="Email"
+  ></app-text-input>
+
+  <app-text-input
+    fieldId="password" [control]="form.get('password')" fieldType="password" label="Password"
+  ></app-text-input>
+
+  <app-checkbox fieldId="rememberMe" [control]="form.get('rememberMe')" label="Remember me"></app-checkbox>
+
+  <div class="alert" *ngIf="auth.error$ | async as error">
+    {{ error }}
+  </div>
+
+  <button mat-stroked-button type="submit" [disabled]="form.invalid || auth.isFetching">Login</button>
+</form>
+

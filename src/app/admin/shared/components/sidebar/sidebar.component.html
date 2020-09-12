@@ -1,0 +1,8 @@
+<div class="sidebar">
+  <mat-action-list>
+    <button mat-list-item [routerLink]="['/admin', 'dashboard']" routerLinkActive="active"> Dashboard </button>
+    <button mat-list-item [routerLink]="['/admin', 'create']" routerLinkActive="active"> Create post </button>
+    <button mat-list-item [routerLink]="['/admin', 'login']" routerLinkActive="active"> Login </button>
+    <button mat-list-item (click)="logout($event)" *ngIf="auth.isAuthenticated()"> Logout </button>
+  </mat-action-list>
+</div>

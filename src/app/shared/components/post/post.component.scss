@@ -1,0 +1,53 @@
+@import "../../../../assets/theme/variables";
+
+:host {
+
+
+  .post {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 1px solid $divider-color;
+    cursor: pointer;
+    grid-gap: 24px;
+    text-decoration: none;
+    color: black;
+    background-color: $paper-background-color;
+    padding: 24px;
+
+    .image {
+      width: 100%;
+      min-height: 400px;
+      background-position: center;
+      background-size: cover;
+      flex-shrink: 0;
+    }
+
+    .content {
+      align-self: flex-end;
+
+      .headers {
+        .author {
+          margin-left: 8px;
+          color: gray;
+        }
+        .date {
+          color: gray;
+        }
+
+        h2 {
+          margin-bottom: 16px;
+        }
+      }
+
+      .description {
+        margin-top: 16px;
+      }
+    }
+
+
+  }
+
+}
+
+
+

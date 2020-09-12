@@ -1,0 +1,16 @@
+@import "../../../../assets/theme/variables";
+
+.header {
+  border-bottom: 1px solid $divider-color;
+
+  .navbar{
+    display: flex;
+    justify-content: center;
+    a {
+      font-size: 18px;
+      margin: 0 8px;
+      text-decoration: underline;
+      font-weight: 400;
+    }
+  }
+}

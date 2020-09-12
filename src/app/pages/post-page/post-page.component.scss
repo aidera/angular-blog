@@ -1,0 +1,69 @@
+@import "../../../assets/theme/variables";
+
+
+.post-page {
+  text-decoration: none;
+  border: 1px solid $divider-color;
+  padding: 24px;
+
+  .image {
+    max-width: 100%;
+    max-height: 500px;
+    display: block;
+  }
+
+  .headers {
+    align-self: center;
+
+    .author {
+      margin-left: 8px;
+    }
+
+    .chips {
+      margin-top: 16px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      margin-top: 50px;
+    }
+
+  }
+
+  .content {
+    margin-top: 16px;
+    grid-area: content;
+  }
+
+  .back-link {
+    margin-top: 16px;
+    display: inline-block;
+  }
+
+  .comments {
+    margin-top: 48px;
+    padding-top: 32px;
+
+    .add-comment {
+      text-align: right;
+      margin-top: 40px;
+
+      textarea {
+        width: 100%;
+        padding: 16px;
+        border-radius: 4px;
+        resize: none;
+      }
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+//@import "../../../assets/theme/variables";
+
+.posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}

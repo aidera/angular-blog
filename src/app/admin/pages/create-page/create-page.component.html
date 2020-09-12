@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h1>Creating new post</h1>
+
+
+  <app-text-input
+    fieldId="postTitle" [control]="form.get('postTitle')" label="Title"
+  ></app-text-input>
+  <br>
+  <app-text-input
+    fieldId="postAuthor" [control]="form.get('postAuthor')" label="Author"
+  ></app-text-input>
+  <br><br>
+<!--  <app-textarea fieldId="postText" [control]="form.get('postText')"  label="Post test"></app-textarea>-->
+
+  <quill-editor [formControlName]="'postText'"></quill-editor>
+
+  <button mat-stroked-button type="submit" [disabled]="form.invalid">Submit</button>
+
+</form>

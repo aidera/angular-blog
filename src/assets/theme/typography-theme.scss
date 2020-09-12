@@ -1,0 +1,14 @@
+@import "variables";
+
+@mixin typography-theme($theme) {
+
+  $config: mat-get-color-config($theme);
+
+  $primary: map-get($config, primary);
+  $accent: map-get($config, accent);
+
+  .mat-body, .mat-body-1, .mat-typography {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}

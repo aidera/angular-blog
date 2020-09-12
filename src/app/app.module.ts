@@ -3,14 +3,34 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { PostPageComponent } from './pages/post-page/post-page.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { PostComponent } from './shared/components/post/post.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OneLetterNamePipe } from './shared/pipes/one-letter-name.pipe';
+import {SharedModule} from './shared/shared.module';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainLayoutComponent,
+    HomePageComponent,
+    PostPageComponent,
+    HeaderComponent,
+    FooterComponent,
+    PostComponent,
+    OneLetterNamePipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

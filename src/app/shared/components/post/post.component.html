@@ -1,0 +1,18 @@
+<a class="post" [routerLink]="['/post', 1]">
+
+<!--  <div class="image"-->
+<!--       [ngStyle]="{ backgroundImage: 'url('+post.imageUrl+')' }"-->
+<!--  ></div>-->
+
+  <div class="content">
+    <div class="headers">
+
+      <h2 class="mat-display-2">{{ post.title }}</h2>
+      <span class="date">{{ post.date | date:'dd.LL.yyyy' }}</span>
+      <span class="author">{{ post.author }}</span>
+
+    </div>
+    <div class="description" [innerHTML]="post.text"></div>
+  </div>
+
+</a>

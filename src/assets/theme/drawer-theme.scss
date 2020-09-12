@@ -1,0 +1,16 @@
+@import "variables";
+
+@mixin drawer-theme($theme) {
+
+  $config: mat-get-color-config($theme);
+
+  $primary: map-get($config, primary);
+  $accent: map-get($config, accent);
+
+  .mat-drawer-content{
+    background: white;
+    min-height: 100vh;
+    display: flex !important;
+    flex-direction: column;
+  }
+}

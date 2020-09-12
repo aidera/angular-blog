@@ -1,0 +1,13 @@
+@import "variables";
+
+@mixin list-theme($theme) {
+
+  $config: mat-get-color-config($theme);
+
+  $primary: map-get($config, primary);
+  $accent: map-get($config, accent);
+
+  .mat-action-list .mat-list-item:focus {
+    background: none;
+  }
+}
