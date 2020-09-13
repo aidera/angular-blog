@@ -1,20 +1,23 @@
 <div class="post-page">
+  <ng-template #loading><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
 
-<!--  <img [src]="post.imageUrl" [alt]="post.title" class="image">-->
+  <div *ngIf="post$ | async as post; else loading">
 
-  <a class="back-link" routerLink="/"><- Back to posts</a>
+    <!--  <img [src]="post.imageUrl" [alt]="post.title" class="image">-->
 
-  <div class="headers">
+    <a class="back-link" routerLink="/"><- Back to posts</a>
 
-    <h1>{{ post.title }}</h1>
-    <span class="date">{{ post.date | date:'dd.LL.yyyy' }}</span>
-<!--    <span class="author">{{ post.authorName | oneLetterName }} {{ post.authorSurname }}</span>-->
-    <span class="author">{{ post.author }}</span>
+    <div class="headers">
 
+      <h1>{{ post.title }}</h1>
+      <span class="date">{{ post.date | date:'dd.LL.yyyy' }}</span>
+      <!--    <span class="author">{{ post.authorName | oneLetterName }} {{ post.authorSurname }}</span>-->
+      <span class="author">{{ post.author }}</span>
+
+    </div>
+
+    <div class="content" [innerHTML]="post.text"></div>
+
+    <a class="back-link" routerLink="/"><- Back to posts</a>
   </div>
-
-  <div class="content" [innerHTML]="post.text"></div>
-
-  <a class="back-link" routerLink="/"><- Back to posts</a>
-
 </div>
