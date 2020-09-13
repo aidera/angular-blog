@@ -4,6 +4,7 @@ import {PostsService} from '../../../shared/services/posts.service';
 import {switchMap} from 'rxjs/operators';
 import {Post} from '../../../shared/models/Post';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
+import {AlertService} from '../../../shared/services/alert.service';
 
 @Component({
   selector: 'app-edit-page',
@@ -18,7 +19,8 @@ export class EditPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    public postsService: PostsService
+    public postsService: PostsService,
+    private alertService: AlertService
   ) {
   }
 
@@ -45,6 +47,7 @@ export class EditPageComponent implements OnInit {
         title: this.form.value.postTitle,
       }).subscribe(() => {
         this.form.reset();
+        this.alertService.success('Post updated');
         this.router.navigate(['/admin', 'dashboard']);
       });
     }

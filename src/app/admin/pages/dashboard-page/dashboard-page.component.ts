@@ -3,6 +3,7 @@ import {PostsService} from '../../../shared/services/posts.service';
 import { Post } from 'src/app/shared/models/Post';
 import { Subscription } from 'rxjs';
 import {FormControl, FormGroup} from '@angular/forms';
+import {AlertService} from '../../../shared/services/alert.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -21,6 +22,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private postsService: PostsService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +38,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
 
   remove(id: string): void {
     this.removePostSubscription = this.postsService.remove(id).subscribe(() => {
+      this.alertService.success('Post removed');
       this.posts = this.posts.filter(post => post.id !== id);
     });
   }
