@@ -3,7 +3,6 @@ import {PostsService} from '../../../shared/services/posts.service';
 import { Post } from 'src/app/shared/models/Post';
 import { Subscription } from 'rxjs';
 import {FormControl, FormGroup} from '@angular/forms';
-import {SearchFilterPipe} from '../../../shared/pipes/search-filter.pipe';
 
 @Component({
   selector: 'app-dashboard-page',

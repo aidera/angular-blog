@@ -41,7 +41,7 @@ export class CreatePageComponent implements OnInit {
       this.postsService.create(post).subscribe(() => {
         this.form.reset();
         this.alertService.success('Post created');
-        // this.router.navigate(['/admin', 'dashboard']);
+        this.router.navigate(['/admin', 'dashboard']);
       });
     }
   }
