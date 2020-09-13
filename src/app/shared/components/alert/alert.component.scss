@@ -1,0 +1,22 @@
+.alert-wrap {
+  position: fixed;
+  top: 50px;
+  right: 40px;
+  max-width: 200px;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid black;
+  .alert {
+    padding: 20px;
+    color: white;
+  }
+  .alert-success {
+    background-color: green;
+  }
+  .alert-danger {
+    background-color: red;
+  }
+  .alert-warning {
+    background-color: yellow;
+  }
+}

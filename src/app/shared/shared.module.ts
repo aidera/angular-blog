@@ -10,6 +10,8 @@ import {AbstractFormControlComponent} from './components/form-controls/abstract-
 import { CheckboxComponent } from './components/form-controls/checkbox/checkbox.component';
 import { TextareaComponent } from './components/form-controls/textarea/textarea.component';
 import {QuillModule} from 'ngx-quill';
+import {SearchFilterPipe} from './pipes/search-filter.pipe';
+import { AlertComponent } from './components/alert/alert.component';
 
 const modules: any[] = [
   CommonModule,
@@ -20,7 +22,15 @@ const modules: any[] = [
 ];
 
 @NgModule({
-  declarations: [TextInputComponent, ValidationComponent, AbstractFormControlComponent, CheckboxComponent, TextareaComponent],
+  declarations: [
+    SearchFilterPipe,
+    TextInputComponent,
+    ValidationComponent,
+    AbstractFormControlComponent,
+    CheckboxComponent,
+    TextareaComponent,
+    AlertComponent
+  ],
   imports: [...modules, QuillModule.forRoot({
     modules: {
       toolbar: [
@@ -30,7 +40,7 @@ const modules: any[] = [
       ]
     }
   })],
-  exports: [...modules, QuillModule, TextInputComponent, CheckboxComponent, TextareaComponent],
+  exports: [...modules, QuillModule, TextInputComponent, CheckboxComponent, TextareaComponent, SearchFilterPipe, AlertComponent],
   providers: [ValidationService]
 })
 export class SharedModule { }
