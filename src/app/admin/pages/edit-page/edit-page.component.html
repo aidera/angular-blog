@@ -1,1 +1,15 @@
-<p>edit-page works!</p>
+<ng-template #loading><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
+
+<div *ngIf="form; else loading">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <app-text-input
+      fieldId="postTitle" [control]="form.get('postTitle')" label="Title"
+    ></app-text-input>
+
+    <quill-editor [formControlName]="'postText'"></quill-editor>
+
+    <button mat-stroked-button type="submit" [disabled]="form.invalid || postsService.fetching">Submit</button>
+
+  </form>
+</div>
