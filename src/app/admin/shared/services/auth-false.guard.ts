@@ -17,7 +17,6 @@ export class AuthFalseGuard implements CanActivate{
     if (!this.auth.isAuthenticated()){
       return true;
     } else {
-      this.auth.logout();
       this.router.navigate(['/admin', 'dashboard'] );
       return undefined;
     }

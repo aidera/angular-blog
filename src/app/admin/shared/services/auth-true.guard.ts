@@ -18,6 +18,7 @@ export class AuthTrueGuard implements CanActivate {
     if (this.auth.isAuthenticated()) {
       return true;
     } else {
+      this.auth.logout();
       this.router.navigate(['/admin', 'login'], {
         queryParams: {
           loginAgain: true
