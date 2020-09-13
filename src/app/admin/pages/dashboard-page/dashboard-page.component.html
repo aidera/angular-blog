@@ -1,9 +1,14 @@
 <ng-template #loading><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
 
-<app-text-input label="Search post..." *ngIf="posts.length"></app-text-input>
+<app-text-input
+  [control]="form.get('search')"
+  fieldId="search"
+  label="Search post..."
+  *ngIf="posts.length"
+></app-text-input>
 
 <div class="table-container" *ngIf="posts.length; else loading">
-  <table mat-table [dataSource]="posts" matSort class="table">
+  <table mat-table [dataSource]="posts | searchFilter:form.value.search" matSort class="table">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
